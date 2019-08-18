@@ -21,7 +21,7 @@ require.config({
 });
 
 define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
-  console.log('$: ', $);
+  console.log('jQuery: ', jQuery === $, jQuery);
   console.log('vue: ', vue);
   console.log('ui: ', ui);
 
@@ -35,13 +35,21 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
     },
   });
 
-  $.fn.awesomePlugin = function () {
-    console.log('this is an awesomePlugin')
+  $.fn.jquery_plugin_example = function () {
+    console.log('-- Here is an example of Jquery Plugin');
   };
 
-  console.log('awesomePlugin: ', $.awesomePlugin);
+  console.log('plugin_example: ', $('head').jquery_plugin_example);
+  console.log($('head').jquery_plugin_example());
 
-  $( function() {
+  try {
+    console.log($.jquery_plugin_example());   // error: it's not the way to call function
+  } catch (e) {
+    console.info("error: It's not the way to call a function");
+    console.error(e.message)
+  }
+
+  $(function() {
     function log( message ) {
       $( "<div>" ).text( message ).prependTo( "#log" );
       $( "#log" ).scrollTop( 0 );
@@ -61,16 +69,26 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
         console.log('request: ', request);
         console.log('response: ', response);
 
-        $.ajax( {
+        $.ajax({
           url: "https://jqueryui.com/resources/demos/autocomplete/search.php",
           dataType: "jsonp",
           data: {
             term: request.term
           },
           success: function( data ) {
+            console.log('success data: ', data);
             response( data );
+          },
+          error: function ( data ) {
+            console.log('error data: ', data);
+
+            $("#id-errors").text('error: ' + data);
           }
-        } );
+        }).done(function( data ) {
+          if ( console && console.log ) {
+            console.log( "Sample of data:", data.slice( 0, 5 ) );
+          }
+        });
       },
       minLength: 2,
       select: function( event, ui ) {
@@ -79,8 +97,16 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
 
         log( "Selected: " + ui.item.value + " aka " + ui.item.id );
         return false;
+      },
+      create: function () {
+        // ref https://stackoverflow.com/questions/16371204/how-to-change-rendering-of-dropdown-in-jquery-ui-autocomplete-attached-to-a-clas/16372823#16372823
+        $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
+          return $('<li>')
+            .append('<a>label:' + item.label + ', value: ' + item.value + '</a>')
+            .appendTo(ul);
+        };
       }
-    } );
-  } );
+    });
+  });
 
 });
