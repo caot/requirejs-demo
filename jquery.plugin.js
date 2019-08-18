@@ -35,11 +35,19 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
     },
   });
 
-  $.fn.awesomePlugin = function () {
-    console.log('this is an awesomePlugin')
+  $.fn.jquery_plugin_example = function () {
+    console.log('-- Here is an example of Jquery Plugin');
   };
 
-  console.log('awesomePlugin: ', $.awesomePlugin);
+  console.log('plugin_example: ', $('head').jquery_plugin_example);
+  console.log($('head').jquery_plugin_example());
+
+  try {
+    console.log($.jquery_plugin_example());   // error: it's not the way to call function
+  } catch (e) {
+    console.info("error: It's not the way to call a function");
+    console.error(e.message)
+  }
 
   $(function() {
     function log( message ) {
@@ -68,7 +76,13 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
             term: request.term
           },
           success: function( data ) {
+            console.log('success data: ', data);
             response( data );
+          },
+          error: function ( data ) {
+            console.log('error data: ', data);
+
+            $("#id-errors").text('error: ' + data);
           }
         }).done(function( data ) {
           if ( console && console.log ) {
