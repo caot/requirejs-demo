@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="theme-color" content="#33b5e5">
+  <link rel="manifest" href="https://mdbootstrap.com/manifest.json">
+
+
+  <title>Bootstrap Autocomplete - examples</title>
+  <link rel="stylesheet" id="compiled.css-css" href="Bootstrap Autocomplete - examples_files/compiled-4.css" type="text/css" media="all">
+</head>
+
+<body class="fixed-sn mdb-skin-custom modal-open scrollable" data-spy="scroll" data-target="#scrollspy" data-offset="15" aria-busy="true">
+
+<main>
+
+<section id="introduction">
+  <style>
+    .form-elegant .font-small {
+      font-size: 0.8rem;
+    }
+
+    .form-elegant .z-depth-1a {
+      -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+      box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    }
+
+    .form-elegant .z-depth-1-half,
+    .form-elegant .btn:hover {
+      -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+      box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    }
+
+  </style>
+
+
+
+  <h1 class="secondary-heading mb-4">Bootstrap Autocomplete</h1>
+
+  <!--Description-->
+  <p class="description">The Bootstrap Autocomplete component predicts the words beign typed based on the first few
+    letters
+    given by the user. You can search the list using basic scroll and the keyboard arrows</p>
+
+</section>
+<!--/Section: Intro-->
+
+<hr class="mt-4 mb-5">
+
+
+<section id="basic">
+
+  <!--Title-->
+  <h2 class="section-heading mb-4">
+    A basic example <a href="https://mdbootstrap.com/products/jquery-ui-kit/" target="_blank" class="btn btn-danger btn-sm waves-effect waves-light" role="button">MDB Pro component
+      <i class="far fa-gem ml-1"></i>
+    </a>
+  </h2>
+
+  <p>With our component you can easily add to autocomplete menu what you want. </p>
+  <p>You only need to add arrays in JavaScript with your <code>variable</code> and you have to initiate that variable
+    with our JavaScript code.</p>
+  <p> For example: </p>
+
+  <section class="section-preview">
+
+    <!-- Grid row -->
+    <div class="row pt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-6">
+
+        <div class="md-form">
+          <input type="search" id="form-autocomplete" class="form-control mdb-autocomplete" style="border-bottom: 1px solid rgb(206, 212, 218);"><ul class="mdb-autocomplete-wrap"></ul><ul class="mdb-autocomplete-wrap"></ul><ul class="mdb-autocomplete-wrap"></ul><ul class="mdb-autocomplete-wrap"></ul><ul class="mdb-autocomplete-wrap"></ul>
+          <button class="mdb-autocomplete-clear" style="visibility: hidden;">
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="https://www.w3.org/2000/svg">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+          </button>
+          <label for="form-autocomplete" class="">What is your favorite US state?</label>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+
+  </section>
+
+</section>
+
+
+</main>
+
+<script type="text/javascript" src="compiled.js"></script>
+
+<script>
+  var states = [
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illnois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
+  ];
+
+  $('#form-autocomplete').mdbAutocomplete({
+    data: states
+  });
+
+</script>
+
+</body></html>
