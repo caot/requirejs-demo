@@ -10018,7 +10018,7 @@ jQuery.expr.filters.visible = function( elem ) {
 
 
 
-var r20 = /%20/g,
+var r20 = / /g,
 	rbracket = /\[\]$/,
 	rCRLF = /\r?\n/g,
 	rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
