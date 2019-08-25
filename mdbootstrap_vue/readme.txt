@@ -1,0 +1,1 @@
+https://mdbootstrap.com/previews/templates/vue/#/

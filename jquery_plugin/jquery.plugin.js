@@ -2,7 +2,7 @@ console.log(require);
 console.log(requirejs);
 
 require.config({
-  baseUrl: "./js/",
+  baseUrl: "../static/js/",
   urlArgs: "v=1." + new Date().getTime(),
   paths: {
     'jquery': 'jquery-3.4.1',
@@ -56,10 +56,10 @@ define(['jquery', 'vue', 'jquery-ui'], function ($, vue, ui) {
     };
 
     $('head').append(`
-<link rel="stylesheet" type="text/css" href="../js/jquery-ui-1.12.1/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="../static/js/jquery-ui-1.12.1/jquery-ui.css">
 <style>
   .ui-autocomplete-loading {
-    background: white url("../js/jquery-ui-1.12.1/images/ui-anim_basic_16x16.gif") right center no-repeat;
+    background: white url("../static/js/jquery-ui-1.12.1/images/ui-anim_basic_16x16.gif") right center no-repeat;
   }
 </style>
 `);
